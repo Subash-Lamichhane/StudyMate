@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Summary from "./pages/Summary";
+import FlashCards from "./pages/FlashCards";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route exact path="/home" element={<Home/>} />
           <Route exact path="/summary" element={<Summary/>} />
           <Route exact path="/about" element={<About/>} />
+          <Route exact path="/flashcards" element={<FlashCards/>} />
         </Routes>
       </Router>
       

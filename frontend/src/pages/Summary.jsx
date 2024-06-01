@@ -208,3 +208,41 @@ const Summary = () => {
 };
 
 export default Summary;
+
+
+
+// import React, { useState } from 'react';
+// import Navbar from '../components/Navbar';
+// import Footer from '../components/Footer';
+// import { useLocation } from 'react-router-dom';
+
+// const Summary = () => {
+//     const location = useLocation();
+//     const flashcards = location.state?.flashcards || [];
+
+//     return (
+//         <div className="flex flex-col min-h-screen">
+//             <Navbar />
+//             <main className="tracking-wide md:mx-32 px-4 py-12 md:px-6 lg:py-16 mt-20">
+//                 <div className="space-y-12">
+//                     <div className="text-center">
+//                         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+//                             Flashcards
+//                         </h1>
+//                     </div>
+//                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+//                         {flashcards.map((card, index) => (
+//                             <div key={index} className="bg-white p-4 shadow-md rounded-lg">
+//                                 <h2 className="text-xl font-semibold mb-2">{card.question}</h2>
+//                                 <p className="text-gray-700">{card.answer}</p>
+//                             </div>
+//                         ))}
+//                     </div>
+//                 </div>
+//             </main>
+//             <Footer />
+//         </div>
+//     );
+// };
+
+// export default Summary;

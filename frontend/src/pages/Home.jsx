@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { json, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
         setSelectedFile(e.target.files[0]);
     };
 
-    const handleUpload = async (e) => {
+    const handleGetSummary = async (e) => {
         e.preventDefault();
         if (!selectedFile) {
             alert("Please select a file first!");
@@ -22,19 +22,15 @@ const Home = () => {
 
         const formData = new FormData();
         formData.append('file', selectedFile);
-        // formData.append('function_name', 'get_summary');
         formData.append('page_no', 0);
 
         setLoading(true);
         try {
-            const formDatatest = new FormData();
-            formDatatest.append('file', selectedFile);
-            const testResponse = await axios.post('http://localhost:3000/get_cards/', formDatatest, {
+            const response = await axios.post('http://localhost:3000/process_pdf/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            console.log(testResponse)
 
             navigate('/summary', {
                 state: {
@@ -52,12 +48,41 @@ const Home = () => {
         setLoading(false);
     };
 
+    const handleGetFlashcards = async (e) => {
+        e.preventDefault();
+        if (!selectedFile) {
+            alert("Please select a file first!");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', selectedFile);
+
+        setLoading(true);
+        try {
+            const response = await axios.post('http://localhost:3000/get_cards/', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+
+            navigate('/flashcards', {
+                state: {
+                    flashcards: response.data,
+                },
+            });
+
+        } catch (error) {
+            console.error("There was an error uploading the file!", error);
+        }
+        setLoading(false);
+    };
 
     return (
         <>
             <div className="flex flex-col min-h-screen">
                 <Navbar />
-                {loading == true && (
+                {loading && (
                     <div className="flex flex-1 items-center justify-center bg-white py-12 px-4 sm:px-6 lg:px-8">
                         <button
                             disabled
@@ -85,37 +110,45 @@ const Home = () => {
                         </button>
                     </div>
                 )}
-                {loading == false &&
-                    <main className="flex flex-1 items-center justify-center bg-white py-12 px-4 sm:px-6 lg:px-8">
+                {!loading && (
+                    <main className="flex flex-1 items-center justify-center bg-white py-12 px-4 sm:px-6 lg:px-8 mt-20">
                         <div className="mx-auto w-full max-w-md space-y-8 bg-gray-100 p-8 rounded-lg shadow-2xl">
                             <div className="space-y-2 text-center">
                                 <h2 className="text-3xl font-extrabold text-gray-900">Upload a PDF</h2>
                                 <p className="text-gray-600">Select a PDF file to upload.</p>
                             </div>
-                            <form className="mt-8 space-y-6" onSubmit={handleUpload}>
-                                <div className="space-y-1">
-                                    <label htmlFor="file" className="block text-sm font-medium text-gray-700">
-                                        PDF File
-                                    </label>
-                                    <input
-                                        accept=".pdf"
-                                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                        id="file"
-                                        required
-                                        type="file"
-                                        onChange={handleFileChange}
-                                    />
-                                </div>
+                            <div>
+                                <label htmlFor="file" className="block text-sm font-medium text-gray-700">
+                                    PDF File
+                                </label>
+                                <input
+                                    accept=".pdf"
+                                    className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                    id="file"
+                                    required
+                                    type="file"
+                                    onChange={handleFileChange}
+                                />
+                            </div>
+                            <div className="flex justify-center flex-col gap-5">
                                 <button
-                                    type="submit"
+                                    type="button"
                                     className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    onClick={handleGetSummary}
                                 >
-                                    Upload
+                                    Get Insights
                                 </button>
-                            </form>
+                                <button
+                                    type="button"
+                                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                    onClick={handleGetFlashcards}
+                                >
+                                    Get Flashcards
+                                </button>
+                            </div>
                         </div>
                     </main>
-                }
+                )}
                 <Footer />
             </div>
         </>
