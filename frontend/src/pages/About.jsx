@@ -1,58 +1,100 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { motion } from 'framer-motion';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const About = () => {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                when: "beforeChildren"
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    };
+
+    const sectionVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1, y: 0,
+            transition: { duration: 0.5, ease: "easeOut" }
+        }
+    };
+
     return (
         <>
             <div className="flex flex-col min-h-screen">
                 <Navbar />
                 <main className="flex flex-col">
-                    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 md:px-32">
+                    <motion.section 
+                        className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 md:px-32"
+                        initial="hidden"
+                        animate="visible"
+                        variants={sectionVariants}
+                    >
                         <div className="container px-4 md:px-6">
-                            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_550px]">
+                            <motion.div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_550px]"
+                                variants={containerVariants}
+                                initial="hidden"
+                                animate="visible"
+                            >
                                 <div className="flex flex-col justify-center space-y-4">
-                                    <div className="space-y-2">
+                                    <motion.div className="space-y-2" variants={itemVariants}>
                                         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none my-4">About This Project</h1>
                                         <p className="max-w-[600px] text-gray-500 md:text-xl">
                                             PDFAssistant leverages llmware to generate insightful summaries and keywords from your PDF articles, empowering you to quickly grasp key information.
                                         </p>
-                                    </div>
-                                    <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                                    </motion.div>
+                                    <motion.div className="flex flex-col gap-2 min-[400px]:flex-row" variants={itemVariants}>
                                         <Link
                                             className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                                             to='/'
                                         >
                                             Get Started
                                         </Link>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                                <div className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div className="flex flex-col items-start gap-2">
+                                <motion.div 
+                                    className="container mx-auto px-4 py-12 md:px-6 lg:py-16"
+                                    variants={containerVariants}
+                                >
+                                    <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <motion.div className="flex flex-col items-start gap-2" variants={itemVariants}>
                                             <UsersIcon className="h-8 w-8 text-indigo-600" />
                                             <h3 className="text-lg font-semibold">Accessible to All</h3>
                                             <p className="text-gray-600 dark:text-gray-400">
                                                 This tool is designed to be user-friendly and accessible, making it easy for anyone to harness the power of AI-driven PDF insights.
                                             </p>
-                                        </div>
-                                        <div className="flex flex-col items-start gap-2">
+                                        </motion.div>
+                                        <motion.div className="flex flex-col items-start gap-2" variants={itemVariants}>
                                             <ClipboardIcon className="h-8 w-8 text-indigo-600" />
                                             <h3 className="text-lg font-semibold">Streamlined Insights</h3>
                                             <p className="text-gray-600 dark:text-gray-400">
-                                                THis AI-powered tool extracts key information, summaries, and insights from your PDF documents, saving you time and effort.
+                                                This AI-powered tool extracts key information, summaries, and insights from your PDF documents, saving you time and effort.
                                             </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        </motion.div>
+                                    </motion.div>
+                                </motion.div>
+                            </motion.div>
                         </div>
-                    </section>
-                    <section className="w-full py-12 md:py-24 lg:py-32 bg-white md:px-32">
+                    </motion.section>
+                    <motion.section 
+                        className="w-full py-12 md:py-24 lg:py-32 bg-white md:px-32"
+                        initial="hidden"
+                        animate="visible"
+                        variants={sectionVariants}
+                    >
                         <div className="container px-4 md:px-6">
                             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-                                <div className="space-y-2">
+                                <motion.div className="space-y-2" variants={itemVariants}>
                                     <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm">Project's Mission</div>
                                     <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                                         Empowering You with Intelligent PDF Insights
@@ -60,47 +102,52 @@ const About = () => {
                                     <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                                         This project mission is to provide you with a powerful tool that simplifies the process of extracting valuable information from your PDF documents. We believe that by leveraging the latest advancements in AI technology, we can help you save time, improve productivity, and make more informed decisions.
                                     </p>
-                                </div>
-                                <div className="grid gap-6">
-                                    <div className="grid gap-1">
+                                </motion.div>
+                                <motion.div className="grid gap-6" variants={containerVariants}>
+                                    <motion.div className="grid gap-1" variants={itemVariants}>
                                         <h3 className="text-xl font-bold">Streamlined Workflow</h3>
-                                        <p className="">
+                                        <p>
                                             This tool is designed to seamlessly integrate into your existing PDF-based workflows, allowing you to quickly and efficiently extract the insights you need.
                                         </p>
-                                    </div>
-                                    <div className="grid gap-1">
+                                    </motion.div>
+                                    <motion.div className="grid gap-1" variants={itemVariants}>
                                         <h3 className="text-xl font-bold">Cutting-Edge AI</h3>
-                                        <p className="">
+                                        <p>
                                             We leverage the latest advancements in natural language processing and machine learning to provide you with accurate and reliable PDF insights.
                                         </p>
-                                    </div>
-                                    <div className="grid gap-1">
+                                    </motion.div>
+                                    <motion.div className="grid gap-1" variants={itemVariants}>
                                         <h3 className="text-xl font-bold">Accessible to All</h3>
-                                        <p className="">
+                                        <p>
                                             This tool is designed to be user-friendly and accessible, making it easy for anyone to harness the power of AI-driven PDF insights.
                                         </p>
-                                    </div>
-                                </div>
+                                    </motion.div>
+                                </motion.div>
                             </div>
                         </div>
-                    </section>
-                    <section className="w-full py-12 md:py-24 lg:py-32 border-t md:px-32">
+                    </motion.section>
+                    <motion.section 
+                        className="w-full py-12 md:py-24 lg:py-32 border-t md:px-32"
+                        initial="hidden"
+                        animate="visible"
+                        variants={sectionVariants}
+                    >
                         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-                            <div className="space-y-3">
+                            <motion.div className="space-y-3" variants={itemVariants}>
                                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Unlock the Power of PDFAssistant</h2>
                                 <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                                     Start using our AI-powered tool to quickly extract key information, summaries, and insights from your PDF documents.
                                 </p>
-                            </div>
-                            <div className="mx-auto w-full max-w-sm space-y-2">
+                            </motion.div>
+                            <motion.div className="mx-auto w-full max-w-sm space-y-2" variants={itemVariants}>
                                 <Link
                                     className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                                     to='/home'>
                                     Get Started
                                 </Link>
-                            </div>
+                            </motion.div>
                         </div>
-                    </section>
+                    </motion.section>
                 </main>
                 <Footer />
             </div>
@@ -108,7 +155,7 @@ const About = () => {
     )
 }
 
-export default About
+export default About;
 
 function ClipboardIcon(props) {
     return (
@@ -129,7 +176,6 @@ function ClipboardIcon(props) {
         </svg>
     )
 }
-
 
 function LightbulbIcon(props) {
     return (
@@ -152,7 +198,6 @@ function LightbulbIcon(props) {
     )
 }
 
-
 function TimerIcon(props) {
     return (
         <svg
@@ -173,7 +218,6 @@ function TimerIcon(props) {
         </svg>
     )
 }
-
 
 function UsersIcon(props) {
     return (

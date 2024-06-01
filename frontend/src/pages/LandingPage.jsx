@@ -3,20 +3,44 @@ import Navbar from "../components/Navbar"
 import landing_image from "../assets/images/landing.png"
 import Footer from "../components/Footer"
 import FAQ from "../components/FAQ"
+import { motion } from 'framer-motion'
+import TypingText from "../components/TypingText"
+import { useState } from "react"
+import ReactTypingEffect from 'react-typing-effect';
+
 export default function LandingPage() {
+
     return (
         <div className="flex flex-col min-h-[100dvh]">
             <header>
                 <Navbar />
             </header>
             <main className="flex-1 ">
-                <section className="w-full py-24 md:py-24 lg:py-32 xl:py-48 bg-[#d0c8b5] md:px-32">
-                    <div className="container px-4 md:px-6">
+                <section className="w-full py-24 md:py-24 lg:py-32 xl:py-32 bg-[#d0c8b5] md:px-32">
+                    <motion.div
+                        className="container px-4 md:px-6"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
                         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-                            <div className="flex flex-col justify-center space-y-4">
+                            <motion.div
+                                className="flex flex-col justify-center space-y-4"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.5, duration: 0.8 }}
+                            >
                                 <div className="space-y-2">
                                     <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                                        Unlock the Power of AI-Powered Article Summarization
+                                        Unlock the Power of AI-Powered Article
+                                        <div className="text-yellow-700">
+                                            <ReactTypingEffect
+                                                speed={200}
+                                                text={["Summarize ", "Revise"]}
+
+                                            />
+
+                                        </div>
                                     </h1>
                                     <p className="max-w-[600px] text-gray-600 md:text-xl pt-3">
                                         PDFAssistant uses advanced AI algorithms from llmware to quickly summarize PDF articles, extract key keywords, and
@@ -24,35 +48,61 @@ export default function LandingPage() {
                                     </p>
                                 </div>
                                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">
-                                    <Link
-                                        className="inline-flex h-12 items-center justify-center rounded-md bg-gray-900 px-10 text-base font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                                        to='home'
+                                    <motion.div
+                                        initial={{ scale: 0.9 }}
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{ type: 'spring', stiffness: 400, damping: 70 }}
                                     >
-                                        Try It Now
-                                    </Link>
-                                    <Link
-                                        className="inline-flex h-12 items-center justify-center rounded-md border border-gray-200 bg-white px-10 text-base font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                                        to='/about'
+                                        <Link
+                                            className="inline-flex h-12 items-center justify-center rounded-md bg-gray-900 px-10 text-base font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                                            to='home'
+                                        >
+                                            Try It Now
+                                        </Link>
+                                    </motion.div>
+                                    <motion.div
+                                        initial={{ scale: 0.9 }}
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{ type: 'spring', stiffness: 400, damping: 70 }}
                                     >
-                                        Learn More
-                                    </Link>
+                                        <Link
+                                            className="inline-flex h-12 items-center justify-center rounded-md border border-gray-200 bg-white px-10 text-base font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                                            to='/about'
+                                        >
+                                            Learn More
+                                        </Link>
+                                    </motion.div>
                                 </div>
-
-                            </div>
-                            <img
+                            </motion.div>
+                            <motion.img
                                 alt="Hero"
                                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
                                 height="550"
                                 src={landing_image}
                                 width="550"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 1, duration: 0.8 }}
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </section>
                 <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 md:px-32">
-                    <div className="container px-4 md:px-6">
+                    <motion.div
+                        className="container px-4 md:px-6"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
                         <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
-                            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                            <motion.div
+                                className="flex flex-col items-center justify-center space-y-4 text-center"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.5, duration: 0.8 }}
+                            >
                                 <BookIcon className="h-12 w-12 text-gray-500" />
                                 <div className="space-y-2">
                                     <h3 className="text-xl font-bold">PDF Summarization</h3>
@@ -68,8 +118,14 @@ export default function LandingPage() {
                                         <ArrowRightIcon className="ml-1 h-4 w-4" />
                                     </Link>
                                 </div>
-                            </div>
-                            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                            </motion.div>
+                            <motion.div
+                                className="flex flex-col items-center justify-center space-y-4 text-center"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.7, duration: 0.8 }}
+                            >
                                 <TagIcon className="h-12 w-12 text-gray-500" />
                                 <div className="space-y-2">
                                     <h3 className="text-xl font-bold">Keyword Extraction</h3>
@@ -85,8 +141,14 @@ export default function LandingPage() {
                                         <ArrowRightIcon className="ml-1 h-4 w-4" />
                                     </Link>
                                 </div>
-                            </div>
-                            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                            </motion.div>
+                            <motion.div
+                                className="flex flex-col items-center justify-center space-y-4 text-center"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.9, duration: 0.8 }}
+                            >
                                 <MailQuestionIcon className="h-12 w-12 text-gray-500" />
                                 <div className="space-y-2">
                                     <h3 className="text-xl font-bold">Question Answering</h3>
@@ -102,17 +164,23 @@ export default function LandingPage() {
                                         <ArrowRightIcon className="ml-1 h-4 w-4" />
                                     </Link>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
                 </section>
-                <FAQ />
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, duration: 1 }}>
+
+                    <FAQ />
+                </motion.div>
             </main>
             <Footer />
         </div>
     )
 }
-
 
 function ArrowRightIcon(props) {
     return (
@@ -134,7 +202,6 @@ function ArrowRightIcon(props) {
     )
 }
 
-
 function BookIcon(props) {
     return (
         <svg
@@ -153,7 +220,6 @@ function BookIcon(props) {
         </svg>
     )
 }
-
 
 function MailQuestionIcon(props) {
     return (
@@ -176,7 +242,6 @@ function MailQuestionIcon(props) {
         </svg>
     )
 }
-
 
 function TagIcon(props) {
     return (

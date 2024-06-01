@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGithub } from "react-icons/fa";
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,6 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
     return (
         <div>
             <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
@@ -18,15 +18,17 @@ const Navbar = () => {
                     </Link>
                     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                         <a href="https://github.com/Subash-Lamichhane/PDFAssistant" className="hidden md:flex">
-                            <button type="button" className="bg-gray-300 hover:bg-gray-400 text-black md:px-5 md:py-2 rounded-md flex items-center space-x-2 mx-3 font-[600]">
+                            <motion.button type="button" className="bg-gray-300 hover:bg-gray-400 text-black md:px-5 md:py-2 rounded-md flex items-center space-x-2 mx-3 font-[600]"
+                                whileHover={{ scale: 1.1 }}>
                                 <FaGithub />
                                 <span>GitHub</span>
-                            </button>
+                            </motion.button>
                         </a>
                         <a href="https://quine.sh/repo/Subash-Lamichhane-PDFAssistant-802497373" className="hidden md:flex">
-                            <button type="button" className="bg-[#4fe331] hover:bg-green-600 text-black md:px-5 md:py-2 rounded-md flex items-center space-x-2 px-2 font-[600]">
+                            <motion.button type="button" className="bg-[#4fe331] hover:bg-green-600 text-black md:px-5 md:py-2 rounded-md flex items-center space-x-2 px-2 font-[600]"
+                                whileHover={{ scale: 1.1 }}>
                                 <span>Quine</span>
-                            </button>
+                            </motion.button>
                         </a>
                         <button
                             onClick={toggleMenu}
@@ -35,7 +37,7 @@ const Navbar = () => {
                             aria-controls="navbar-sticky"
                             aria-expanded={isOpen ? "true" : "false"}
                         >
-                            <span className="sr-only">Open main menu</span>
+                            <motion.span className="sr-only" whileHover={{ scale: 1.1 }}>Open main menu</motion.span>
                             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
                             </svg>
@@ -43,12 +45,12 @@ const Navbar = () => {
                     </div>
                     <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isOpen ? 'block' : 'hidden'}`} id="navbar-sticky">
                         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
-                            <li>
+                            <motion.li whileHover={{ scale: 1.2 }}>
                                 <Link to='/home' className="block py-2 px-3 text-lg md:text-xl bg-blue-700 rounded md:bg-transparent md:p-0 md:hover:text-blue-700" aria-current="page">Home</Link>
-                            </li>
-                            <li>
+                            </motion.li>
+                            <motion.li whileHover={{ scale: 1.2 }}>
                                 <Link to='/about' className="block py-2 px-3 text-lg md:text-xl text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</Link>
-                            </li>
+                            </motion.li>
                         </ul>
                     </div>
                 </div>

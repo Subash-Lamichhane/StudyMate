@@ -27,12 +27,6 @@ const Home = () => {
 
         setLoading(true);
         try {
-            // const response = await axios.post('http://localhost:3000/process_pdf/', formData, {
-            //     headers: {
-            //         'Content-Type': 'multipart/form-data',
-            //     },
-            // });
-
             const formDatatest = new FormData();
             formDatatest.append('file', selectedFile);
             const testResponse = await axios.post('http://localhost:3000/get_cards/', formDatatest, {
