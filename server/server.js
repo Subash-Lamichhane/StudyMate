@@ -208,6 +208,11 @@ app.post('/get_cards', upload.single('file'), async (req, res) => {
         // Extract text from PDF
         const data = await pdfParse(dataBuffer);
 
+        if (data.text.split(/\s+/).length > 5000) {
+            // If it does, keep only the first 3000 words
+            data.text = data.text.split(/\s+/).slice(0, 5000).join(' ');
+        }
+
         const format = [{
             "question":"Question1",
             "answer":"Answer1"
