@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import faqimage from "../assets/images/faq.png";
+import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleOpen = (index) => {
     setOpenIndex(openIndex === index ? null : index);
-  };
-
+  }
   const faqs = [
     {
       question: "How does the web app generate summaries from PDF articles?",
@@ -26,8 +26,12 @@ const FAQ = () => {
       answer: "Absolutely! The web app includes a question-answer feature powered by AI. Users can ask specific questions about the content of the provided PDF, and the AI will analyze the document to provide precise and relevant answers. This feature is designed to help users quickly find specific information within lengthy articles."
     },
     {
+      question: "Can the web app generate flashcards from PDF content?",
+      answer: "Yes, the web app can automatically generate flashcards from any PDF content. This feature helps users study and retain information by creating flashcards based on the key points and concepts extracted from the document. It is particularly useful for educational and study purposes."
+    },
+    {
       question: "Is there a limit to the size or length of the PDF files that can be uploaded?",
-      answer: "There are some limitations on the size or length of PDF files that can be processed, depending on the web app's specific technical constraints. Generally, the app is designed to handle small article lengths."
+      answer: "There are some limitations on the size or length of PDF files that can be processed, depending on the web app's specific technical constraints. Generally, the app is designed to handle small to medium-sized articles efficiently."
     }
   ];
   

@@ -34,7 +34,7 @@ const About = () => {
             <div className="flex flex-col min-h-screen">
                 <Navbar />
                 <main className="flex flex-col">
-                    <motion.section 
+                    <motion.section
                         className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 md:px-32"
                         initial="hidden"
                         animate="visible"
@@ -48,9 +48,9 @@ const About = () => {
                             >
                                 <div className="flex flex-col justify-center space-y-4">
                                     <motion.div className="space-y-2" variants={itemVariants}>
-                                        <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none my-4">About This Project</h1>
+                                        <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none my-4">About StudyMate</h1>
                                         <p className="max-w-[600px] text-gray-500 md:text-xl">
-                                            PDFAssistant leverages llmware to generate insightful summaries and keywords from your PDF articles, empowering you to quickly grasp key information.
+                                        StudyMate is your go-to tool for efficient studying and exam preparation. With its powerful AI capabilities, it generates insightful summaries, keywords, and flashcards from your PDF materials, helping you grasp key information quickly and effectively.
                                         </p>
                                     </motion.div>
                                     <motion.div className="flex flex-col gap-2 min-[400px]:flex-row" variants={itemVariants}>
@@ -62,23 +62,23 @@ const About = () => {
                                         </Link>
                                     </motion.div>
                                 </div>
-                                <motion.div 
+                                <motion.div
                                     className="container mx-auto px-4 py-12 md:px-6 lg:py-16"
                                     variants={containerVariants}
                                 >
                                     <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <motion.div className="flex flex-col items-start gap-2" variants={itemVariants}>
                                             <UsersIcon className="h-8 w-8 text-indigo-600" />
-                                            <h3 className="text-lg font-semibold">Accessible to All</h3>
+                                            <h3 className="text-lg font-semibold">Designed for All Learners</h3>
                                             <p className="text-gray-600 dark:text-gray-400">
-                                                This tool is designed to be user-friendly and accessible, making it easy for anyone to harness the power of AI-driven PDF insights.
+                                                This tool is user-friendly and accessible, making it easy for anyone to leverage the power of AI-driven study aids.
                                             </p>
                                         </motion.div>
                                         <motion.div className="flex flex-col items-start gap-2" variants={itemVariants}>
                                             <ClipboardIcon className="h-8 w-8 text-indigo-600" />
-                                            <h3 className="text-lg font-semibold">Streamlined Insights</h3>
+                                            <h3 className="text-lg font-semibold">Efficient Content Summarization</h3>
                                             <p className="text-gray-600 dark:text-gray-400">
-                                                This AI-powered tool extracts key information, summaries, and insights from your PDF documents, saving you time and effort.
+                                                Our AI-powered tool extracts key information, summaries, and insights from your PDF documents, saving you time and effort.
                                             </p>
                                         </motion.div>
                                     </motion.div>
@@ -86,7 +86,7 @@ const About = () => {
                             </motion.div>
                         </div>
                     </motion.section>
-                    <motion.section 
+                    <motion.section
                         className="w-full py-12 md:py-24 lg:py-32 bg-white md:px-32"
                         initial="hidden"
                         animate="visible"
@@ -95,38 +95,44 @@ const About = () => {
                         <div className="container px-4 md:px-6">
                             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
                                 <motion.div className="space-y-2" variants={itemVariants}>
-                                    <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm">Project's Mission</div>
+                                    <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm">Our Mission</div>
                                     <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                                        Empowering You with Intelligent PDF Insights
+                                        Empowering Efficient Learning and Retention
                                     </h2>
                                     <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                        This project mission is to provide you with a powerful tool that simplifies the process of extracting valuable information from your PDF documents. We believe that by leveraging the latest advancements in AI technology, we can help you save time, improve productivity, and make more informed decisions.
+                                        Our mission is to provide you with a powerful tool that simplifies the process of studying and retaining information from your PDF materials. We believe that by leveraging the latest advancements in AI technology, we can help you save time, improve productivity, and achieve better academic or professional success.
                                     </p>
                                 </motion.div>
                                 <motion.div className="grid gap-6" variants={containerVariants}>
                                     <motion.div className="grid gap-1" variants={itemVariants}>
                                         <h3 className="text-xl font-bold">Streamlined Workflow</h3>
                                         <p>
-                                            This tool is designed to seamlessly integrate into your existing PDF-based workflows, allowing you to quickly and efficiently extract the insights you need.
+                                            This tool seamlessly integrates into your existing PDF-based workflows, allowing you to quickly and efficiently extract the insights and study aids you need.
                                         </p>
                                     </motion.div>
                                     <motion.div className="grid gap-1" variants={itemVariants}>
                                         <h3 className="text-xl font-bold">Cutting-Edge AI</h3>
                                         <p>
-                                            We leverage the latest advancements in natural language processing and machine learning to provide you with accurate and reliable PDF insights.
+                                            We leverage the latest advancements in natural language processing and machine learning to provide you with accurate and reliable PDF summaries and flashcards.
                                         </p>
                                     </motion.div>
                                     <motion.div className="grid gap-1" variants={itemVariants}>
-                                        <h3 className="text-xl font-bold">Accessible to All</h3>
+                                        <h3 className="text-xl font-bold">Designed for All Learners</h3>
                                         <p>
-                                            This tool is designed to be user-friendly and accessible, making it easy for anyone to harness the power of AI-driven PDF insights.
+                                            This tool is designed to be user-friendly and accessible, making it easy for anyone to harness the power of AI-driven study aids.
+                                        </p>
+                                    </motion.div>
+                                    <motion.div className="grid gap-1" variants={itemVariants}>
+                                        <h3 className="text-xl font-bold">Flashcard Generation</h3>
+                                        <p>
+                                            The web app can automatically generate flashcards from any PDF content. This feature helps users study and retain information by creating flashcards based on the key points and concepts extracted from the document, making it an invaluable tool for last-minute exam preparation.
                                         </p>
                                     </motion.div>
                                 </motion.div>
                             </div>
                         </div>
                     </motion.section>
-                    <motion.section 
+                    <motion.section
                         className="w-full py-12 md:py-24 lg:py-32 border-t md:px-32"
                         initial="hidden"
                         animate="visible"
@@ -134,9 +140,9 @@ const About = () => {
                     >
                         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
                             <motion.div className="space-y-3" variants={itemVariants}>
-                                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Unlock the Power of PDFAssistant</h2>
+                                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Unlock the Power of StudyMate</h2>
                                 <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                    Start using our AI-powered tool to quickly extract key information, summaries, and insights from your PDF documents.
+                                    Start using our AI-powered tool to quickly extract key information, summaries, and flashcards from your PDF documents, empowering you to study more efficiently and conquer last-minute exam preparations.
                                 </p>
                             </motion.div>
                             <motion.div className="mx-auto w-full max-w-sm space-y-2" variants={itemVariants}>
