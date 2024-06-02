@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shepherd-element>.shepherd-content>.shepherd-text {
+    background-color: red !important;
+}
+
+.shepherd-element>.shepherd-content>.shepherd-header {
+    background-color: purple !important;
+
+}
+
+.shepherd-element>.shepherd-content>.shepherd-footer>.shepherd-button {
+    background-color: rgb(212, 190, 233) !important;
+}

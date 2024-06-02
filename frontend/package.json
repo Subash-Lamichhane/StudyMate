@@ -16,7 +16,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
-    "react-typing-effect": "^2.0.5"
+    "react-typing-effect": "^2.0.5",
+    "shepherd.js": "^12.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
