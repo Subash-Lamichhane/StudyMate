@@ -44,7 +44,7 @@ const FlashCard = ({ flashInfo }) => {
                             animate={{ transform: "rotateY(0deg)" }}
                             exit={{ transform: "rotateY(-90deg)" }}
                             transition={{ duration: 0.4 }}
-                            className="absolute w-full h-full bg-[#FF005A] rounded-3xl flex justify-center items-center flex-col"
+                            className="absolute w-full h-full bg-[#fe4a49] rounded-3xl flex justify-center items-center flex-col"
                         >
                             <div className="justify-between h-[10%] flex w-full">
                                 <div className="bg-white w-24 h-full rounded-tl-2xl flex justify-center items-center text-lg font-bold">
@@ -71,15 +71,15 @@ const FlashCard = ({ flashInfo }) => {
                             animate={{ transform: "rotateY(0deg)" }}
                             exit={{ transform: "rotateY(-90deg)" }}
                             transition={{ duration: 0.4 }}
-                            className="absolute w-full h-full bg-[#4169E1] rounded-3xl flex justify-center items-center flex-col"
+                            className="absolute w-full h-full bg-[#c9c4ed] rounded-3xl flex justify-center items-center flex-col"
                         >
                             <div className="justify-between h-[10%] flex w-full">
                                 <div className="bg-white w-24 h-full rounded-tl-2xl flex justify-center items-center text-lg font-bold">
                                     Card {currentIndex + 1}
                                 </div>
                             </div>
-                            <div className="h-[65%] grid grid-rows-5 items-center text-xl font-bold text-white px-8 text-center flex-col pb-12 pt-5">
-                                <div className="mb-14 text-4xl text-gray-100 row-span-2">Answer:</div>
+                            <div className="h-[65%] grid grid-rows-5 items-center text-xl font-bold text-black px-8 text-center flex-col pb-12 pt-5">
+                                <div className="mb-14 text-4xl text-gray-600 row-span-2">Answer:</div>
                                 <div className="row-span-3">{currentCard.answer}</div>
                             </div>
                             <div className="h-[25%] flex justify-center items-center">

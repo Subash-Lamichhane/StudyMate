@@ -13,7 +13,7 @@ export default function LandingPage() {
     useModalOverlay: true,
     exitOnEsc: true,
     keyboardNavigation: true,
-    confirmCancel: true,
+    // confirmCancel: true,
     defaultStepOptions: {
       classes: "shadow-md bg-purple-dark",
       scrollTo: true,
@@ -25,8 +25,12 @@ export default function LandingPage() {
 
   tour.addStep({
     id: "step1",
-    title:"StepONe",
-    text: "Step One",
+    title:"Step One",
+    text: `
+    <div class="tour-step-content">
+      <br><p>Welcome to StudyMate. Shepardjs will help you navigate through app.</p>
+    </div>
+  `,
     scrollTo: {
       behavior: "smooth",
       block: "center",
@@ -38,7 +42,7 @@ export default function LandingPage() {
     },
 
     buttons: [
-      { text: "Back", action: tour.back },
+      // { text: "Back", action: tour.back },
       { text: "Next", action: tour.next },
     ],
   });
@@ -104,11 +108,31 @@ export default function LandingPage() {
       { text: "Next", action: tour.next },
     ],
   });
-
   tour.addStep({
     id: "step5",
     title: "StepONe",
+
     text: "Step Five",
+    scrollTo: {
+      behavior: "smooth",
+      block: "center",
+    },
+
+    attachTo: {
+      element: "#try_it_now",
+      on: "top",
+    },
+
+    buttons: [
+      { text: "Back", action: tour.back },
+      { text: "Next", action: tour.next },
+    ],
+  });
+
+  tour.addStep({
+    id: "step6",
+    title: "StepONe",
+    text: "Step Six",
     scrollTo: {
       behavior: "smooth",
       block: "center",
@@ -148,7 +172,10 @@ export default function LandingPage() {
 
     buttons: [
       { text: "Back", action: tour.back },
-      { text: "Next", action: tour.next },
+      {
+        text: 'End Tour',
+        action: tour.complete
+      }
     ],
     
   });
@@ -200,6 +227,7 @@ export default function LandingPage() {
                     initial={{ scale: 0.9 }}
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400, damping: 70 }}
+                    id="try_it_now"
                   >
                     <Link
                       className="inline-flex h-12 items-center justify-center rounded-md bg-gray-900 px-10 text-base font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
