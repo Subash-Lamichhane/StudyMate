@@ -50,7 +50,8 @@ const About = () => {
                                     <motion.div className="space-y-2" variants={itemVariants}>
                                         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none my-4">About StudyMate</h1>
                                         <p className="max-w-[600px] text-gray-500 md:text-xl">
-                                        StudyMate is your go-to tool for efficient studying and exam preparation. With its powerful AI capabilities, it generates insightful summaries, keywords, and flashcards from your PDF materials, helping you grasp key information quickly and effectively.
+                                        StudyMate is your go-to tool for efficient studying and exam preparation. With its powerful AI capabilities, it generates insightful summaries, keywords, and flashcards from your PDF materials, helping you grasp key information quickly and effectively. StudyMate uses Shepherd js to give interactive tour to the user.
+
                                         </p>
                                     </motion.div>
                                     <motion.div className="flex flex-col gap-2 min-[400px]:flex-row" variants={itemVariants}>

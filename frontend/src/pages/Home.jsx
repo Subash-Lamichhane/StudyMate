@@ -113,11 +113,11 @@ const Home = () => {
                 {!loading && (
                     <main className="flex flex-1 items-center justify-center bg-white py-12 px-4 sm:px-6 lg:px-8 mt-20">
                         <div className="mx-auto w-full max-w-md space-y-8 bg-gray-100 p-8 rounded-lg shadow-2xl">
-                            <div id="upload-file" className="space-y-2 text-center">
+                            <div className="space-y-2 text-center">
                                 <h2 className="text-3xl font-extrabold text-gray-900">Upload a PDF</h2>
                                 <p className="text-gray-600">Select a PDF file to upload.</p>
                             </div>
-                            <div>
+                            <div id="upload-file">
                                 <label htmlFor="file" className="block text-sm font-medium text-gray-700">
                                     PDF File
                                 </label>
@@ -130,8 +130,9 @@ const Home = () => {
                                     onChange={handleFileChange}
                                 />
                             </div>
-                            <div id="submit-file" className="flex justify-center flex-col gap-5">
+                            <div className="flex justify-center flex-col gap-5">
                                 <button
+                                    id="get-insights"
                                     type="button"
                                     className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                     onClick={handleGetSummary}
@@ -139,6 +140,7 @@ const Home = () => {
                                     Get Insights
                                 </button>
                                 <button
+                                    id='get-flashcards'
                                     type="button"
                                     className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                                     onClick={handleGetFlashcards}

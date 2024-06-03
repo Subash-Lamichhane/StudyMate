@@ -1,0 +1,82 @@
+.shepherd-element>.shepherd-content>.shepherd-header>.shepherd-title {
+    font-size: 23px !important;
+    font-weight: 500;
+    text-align: center;
+}
+
+.shepherd-element>.shepherd-content>.shepherd-header {
+    font-size: 26px !important;
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.shepherd-element>.shepherd-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+.shepherd-element>.shepard-arrow {
+    border: 2 px solid black;
+}
+.shepherd-element>.shepherd-content>.shepherd-text{
+    background-color: #fff;
+}
+.shepherd-element>.shepherd-content>.shepherd-footer {
+    padding: 15px;
+    border-radius: 0 0 5px 5px;
+    text-align: right;
+    border-top: 2px solid #c7c5c5;
+}
+
+.shepherd-element>.shepherd-content>.shepherd-footer>.shepherd-button {
+    background-color: #000 !important;
+    color: #fff;
+    border: none;
+    padding: 10px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.shepherd-element>.shepherd-content>.shepherd-footer>.shepherd-button:hover {
+    background-color: #5a5a5a !important;
+}
+
+.shepherd-theme-custom .shepherd-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.5);
+}
+
+/* Slide-in animation */
+@keyframes slideInRight {
+    from {
+        transform: translateX(20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes scaling {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.shepherd-element {
+    animation: slideInRight 0.4s ease-in-out;
+}
+
+.shepherd-element>.shepherd-content>.shepherd-footer>.shepherd-button:hover {
+    animation: scaling 0.2s ease-in-out forwards;
+}

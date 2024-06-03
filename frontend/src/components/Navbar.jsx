@@ -15,10 +15,11 @@ const Navbar = () => {
         className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200"
         id="navigation-bar"
       >
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" >
           <Link
             to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
+            id="studyPal"
           >
             <span className="self-center text-2xl font-[600] whitespace-nowrap">
               Study<span className=" text-yellow-500">Mate</span>
@@ -26,7 +27,7 @@ const Navbar = () => {
           </Link>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <a
-              href="https://github.com/Subash-Lamichhane/PDFAssistant"
+              href="https://github.com/Subash-Lamichhane/StudyMate"
               id="github"
               className="hidden md:flex"
             >
@@ -40,7 +41,7 @@ const Navbar = () => {
               </motion.button>
             </a>
             <a
-              href="https://quine.sh/repo/Subash-Lamichhane-PDFAssistant-802497373"
+              href="https://quine.sh/user/Subash-Lamichhane"
               id="quine"
               className="hidden md:flex"
             >
