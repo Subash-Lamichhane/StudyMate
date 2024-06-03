@@ -60,7 +60,7 @@ export default function LandingPage() {
     {
       id: "step3",
       title: "Github",
-      text: "You can access the source code of the project by clicking here.",
+      text: "You can access source code of the project by clicking here.",
       scrollTo: { behavior: "smooth", block: "center" },
       attachTo: { element: "#github", on: "top" },
       buttons: [
