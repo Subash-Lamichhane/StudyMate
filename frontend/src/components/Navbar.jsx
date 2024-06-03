@@ -41,7 +41,7 @@ const Navbar = () => {
               </motion.button>
             </a>
             <a
-              href="https://quine.sh/user/Subash-Lamichhane"
+              href="https://quine.sh/repo/Subash-Lamichhane-StudyMate-808900934"
               id="quine"
               className="hidden md:flex"
             >

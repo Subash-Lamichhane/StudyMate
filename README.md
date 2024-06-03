@@ -87,14 +87,14 @@ yarn run dev
 
 #### Backend Setup
 
-Navigate to the backend directory and install dependencies:
+Navigate to the server directory and install dependencies:
 
 ```bash
-cd ../backend
+cd ../server
 yarn install
 ```
 
-Set up the environment variables by creating a `.env.local` file in the backend directory and add your Gemini API key:
+Set up the environment variables by creating a `.env.local` file in the server directory and add your Gemini API key:
 
 ```bash
 API_KEY=AIzaS*************
