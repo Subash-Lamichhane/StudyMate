@@ -11,7 +11,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: "How does the web app generate summaries from PDF articles?",
-      answer: "The web app uses advanced AI algorithms to analyze the content of the provided PDF articles. The AI identifies key points, themes, and important information, then condenses this data into a concise summary. This allows users to quickly understand the main ideas of the article without reading the entire document."
+      answer: "The web app uses gemini API to analyze the content of the provided PDF articles. The AI identifies key points, themes, and important information, then condenses this data into a concise summary. This allows users to quickly understand the main ideas of the article without reading the entire document."
     },
     {
       question: "Can the web app extract keywords from any type of PDF document?",

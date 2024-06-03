@@ -174,15 +174,17 @@ app.post('/get_answer', upload.single('file'), async (req, res) => {
             return res.status(400).json({ error: 'Page number out of range.' });
         }
 
-        const prompt = `Give me answer to question: ${question} in text format. Only give me answer text and do not give me other things.`
+        const pageText = sanitizeString(pages[pageNumber]);
+
+        const prompt = `Based on the following text, answer the question in a safe and respectful manner. Text: "${pageText}". Question: "${sanitizeString(question)}". Only provide the answer text, without any additional commentary.`;
+
         const result = await model.generateContent(prompt);
         const aiResponse = await result.response;
 
-        console.log(aiResponse.text())
+        console.log(aiResponse.text());
 
-        const pageText = pages[pageNumber];
-        responseText = aiResponse.text(); // Replace with actual summary logic
-        // responseText = JSON.parse(responseText);
+        const responseText = aiResponse.text(); // Replace with actual summary logic
+
         // Clean up the uploaded file
         fs.unlinkSync(file.path);
 
@@ -192,6 +194,11 @@ app.post('/get_answer', upload.single('file'), async (req, res) => {
         res.status(500).json({ error: 'An error occurred while processing the PDF file.' });
     }
 });
+
+function sanitizeString(str) {
+    return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 
 app.post('/get_cards', upload.single('file'), async (req, res) => {
     try {

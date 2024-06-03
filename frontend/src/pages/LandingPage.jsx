@@ -28,9 +28,7 @@ export default function LandingPage() {
       id: "step0",
       title: "Welcome",
       text: `
-
-          <br><p>Welcome to StudyMate. Shepardjs will help you navigate through the app.</p>
-
+          <br><p>Welcome to StudyMate. Shepherd will help you navigate through the app.</p>
       `,
       scrollTo: { behavior: "smooth", block: "center" },
       attachTo: { element: "#studyPal", on: "top" },
@@ -95,7 +93,7 @@ export default function LandingPage() {
     {
       id: "step6",
       title: "Upload PDF",
-      text: "Choose your lecture or other pdf materical and upload here to get custom insights and flashcards.",
+      text: "Choose your lecture or other pdf material and upload here to get custom insights and flashcards.",
       scrollTo: { behavior: "smooth", block: "center" },
       attachTo: { element: "#upload-file", on: "top" },
       buttons: [
