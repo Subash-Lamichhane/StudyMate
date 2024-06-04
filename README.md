@@ -50,7 +50,7 @@ Ask questions about the content and get answers instantly, leveraging the power 
 StudyMate is a web-based application accessible on any modern web browser, making it versatile and easy to use across different devices and operating systems.
 
 ## Demo 
-<video src="https://github.com/Subash-Lamichhane/StudyMate/assets/109226874/d433b126-d802-4baa-9a07-0a729e67d06d"></video>
+<video src="https://github.com/Subash-Lamichhane/StudyMate/assets/109226874/ece2112b-36ab-435c-bfc7-710f311080c7"></video>
 
 ## Getting Started
 
@@ -126,10 +126,10 @@ http://localhost:3000
 Landing Page:
 ![Landing1](https://github.com/Subash-Lamichhane/StudyMate/assets/109226874/c310e4b9-32ed-4bf0-9d78-7a308dec6104)
 
-![Landing2](https://github.com/Subash-Lamichhane/StudyMate/assets/109226874/25b0012c-9558-4341-811e-1289b7f78066)
+![Landing2](https://github.com/Subash-Lamichhane/StudyMate/assets/109226874/07ad7018-2b71-4460-affe-8859e8bb7cef)
 
 Home Page:
-![HomePage](https://github.com/Subash-Lamichhane/StudyMate/assets/109226874/008b2f32-1fc8-4d46-bbef-c2b185bb8835)
+![HomePage](https://github.com/Subash-Lamichhane/StudyMate/assets/109226874/c20173e3-a501-4a6d-9aab-7a1d99fc1945)
 
 Summary Page:
 ![SummaryPage1](https://github.com/Subash-Lamichhane/StudyMate/assets/109226874/f86fde3c-032f-4dd9-8156-b434518cf4b5)

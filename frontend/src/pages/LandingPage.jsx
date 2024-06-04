@@ -8,9 +8,25 @@ import ReactTypingEffect from "react-typing-effect";
 import Shepherd from "shepherd.js";
 import { useEffect, useState } from "react";
 import './css/Landing.css'
+import cat1 from "../assets/gif/hi.gif"
+import cat2 from "../assets/gif/1.gif"
+import cat3 from "../assets/gif/2.gif"
+import cat4 from "../assets/gif/3.gif"
+import cat5 from "../assets/gif/4.gif"
+import cat6 from "../assets/gif/5.gif"
+import cat7 from "../assets/gif/7.gif"
+// import cat8 from "../assets/gif/7.gif"
+import cat9 from "../assets/gif/8.gif"
+import cat10 from "../assets/gif/9.gif"
+import cat8 from "../assets/gif/10.gif"
+import cat11 from "../assets/gif/11.gif"
+
 export default function LandingPage() {
   const [tourVisible, setTourVisible] = useState(true);
-
+  const gifs = [cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9,cat10, cat11];
+  const getRandomGif = () => {
+    return gifs[Math.floor(Math.random() * gifs.length)];
+  };
   const tour = new Shepherd.Tour({
     useModalOverlay: true,
     exitOnEsc: true,
@@ -25,108 +41,151 @@ export default function LandingPage() {
   });
   const steps = [
     {
-      id: "step0",
-      title: "Welcome",
+      id: 'step0',
+      title: 'Welcome',
       text: `
-          <br><p>Welcome to StudyMate. Shepherd will help you navigate through the app.</p>
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${cat6}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>Welcome to StudyMate. Shepherd will help you navigate through the app.</p>
       `,
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#studyPal", on: "top" },
-      buttons: [{ text: "Next", action: tour.next }],
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#studyPal', on: 'top' },
+      buttons: [{ text: 'Next', action: tour.next }],
     },
     {
-      id: "step1",
-      title: "Home",
+      id: 'step1',
+      title: 'Home',
       text: `
-
-          <br><p>You can click here to navigate to the page where you can upload pdf and get insights and flash cards from your pdf.</p>
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${getRandomGif()}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>You can click here to navigate to the page where you can upload pdf and get insights and flash cards from your pdf.</p>
       `,
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#home", on: "top" },
-      buttons: [{ text: "Back", action: tour.back },
-      { text: "Next", action: tour.next }],
-    },
-    {
-      id: "step2",
-      title: "About",
-      text: "You can click here to get more information about StudyMate.",
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#about", on: "left" },
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#home', on: 'top' },
       buttons: [
-        { text: "Back", action: tour.back },
-        { text: "Next", action: tour.next },
+        { text: 'Back', action: tour.back },
+        { text: 'Next', action: tour.next },
       ],
     },
     {
-      id: "step3",
-      title: "Github",
-      text: "You can access source code of the project by clicking here.",
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#github", on: "top" },
+      id: 'step2',
+      title: 'About',
+      text: `
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${getRandomGif()}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>You can click here to get more information about StudyMate.</p>
+      `,
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#about', on: 'left' },
       buttons: [
-        { text: "Back", action: tour.back },
-        { text: "Next", action: tour.next },
+        { text: 'Back', action: tour.back },
+        { text: 'Next', action: tour.next },
       ],
     },
     {
-      id: "step4",
-      title: "Quine",
-      text: "If you like this project. Support me by voting me through this link.",
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#quine", on: "top" },
+      id: 'step3',
+      title: 'Github',
+      text: `
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${cat10}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>You can access the source code of the project by clicking here.<br><p>
+      `,
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#github', on: 'top' },
       buttons: [
-        { text: "Back", action: tour.back },
-        { text: "Next", action: tour.next },
+        { text: 'Back', action: tour.back },
+        { text: 'Next', action: tour.next },
       ],
     },
     {
-      id: "step5",
-      title: "Get Started",
-      text: "Click Next or this button to get started StudyMate.",
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#try_it_now", on: "top" },
+      id: 'step4',
+      title: 'Quine',
+      text: `
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${getRandomGif()}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>If you like this project, support me by voting through this link.</p>
+      `,
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#quine', on: 'top' },
       buttons: [
-        { text: "Back", action: tour.back },
-        { text: "Next", action: tour.next },
+        { text: 'Back', action: tour.back },
+        { text: 'Next', action: tour.next },
       ],
     },
     {
-      id: "step6",
-      title: "Upload PDF",
-      text: "Choose your lecture or other pdf material and upload here to get custom insights and flashcards.",
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#upload-file", on: "top" },
+      id: 'step5',
+      title: 'Get Started',
+      text: `
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${getRandomGif()}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>Click Next or this button to get started with StudyMate.</p>
+      `,
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#try_it_now', on: 'top' },
       buttons: [
-        { text: "Back", action: tour.back },
-        { text: "Next", action: tour.next },
+        { text: 'Back', action: tour.back },
+        { text: 'Next', action: tour.next },
+      ],
+    },
+    {
+      id: 'step6',
+      title: 'Upload PDF',
+      text: `
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${getRandomGif()}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>Choose your lecture or other pdf material and upload here to get custom insights and flashcards.</p>
+      `,
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#upload-file', on: 'top' },
+      buttons: [
+        { text: 'Back', action: tour.back },
+        { text: 'Next', action: tour.next },
       ],
       beforeShowPromise: () => {
         return new Promise((resolve) => {
-          const element = document.querySelector("#home");
+          const element = document.querySelector('#home');
           if (element) element.click();
           resolve();
         });
       },
     },
     {
-      id: "step7",
-      title: "Get Insight",
-      text: "Click here after uploading pdf to get keywords and summary related to your pdf. You can also ask question to AI too.",
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#get-insights", on: "top" },
+      id: 'step7',
+      title: 'Get Insight',
+      text: `
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${cat8}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>Click here after uploading a pdf to get keywords and a summary related to your pdf. You can also ask questions to AI too.</p>
+      `,
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#get-insights', on: 'top' },
       buttons: [
-        { text: "Next", action: tour.next },
+        { text: 'Next', action: tour.next },
       ],
-    },{
-      id: "step8",
-      title: "Get Flash Cards",
-      text: "Click here after uploading pdf to get custom flash cards which helps you revise your pdf content.",
-      scrollTo: { behavior: "smooth", block: "center" },
-      attachTo: { element: "#get-flashcards", on: "top" },
+    },
+    {
+      id: 'step8',
+      title: 'Get Flash Cards',
+      text: `
+        <div class="tour-cat-gif-container">
+          <img id="tour-cat-gif" src="${cat11}" alt="Cat" class="tour-cat-gif"/>
+        </div>
+        <br><p>Click here after uploading a pdf to get custom flashcards that help you revise your pdf content.</p>
+      `,
+      scrollTo: { behavior: 'smooth', block: 'center' },
+      attachTo: { element: '#get-flashcards', on: 'top' },
       buttons: [
-        { text: "Back", action: tour.back },
+        { text: 'Back', action: tour.back },
         {
-          text: "End Tour",
+          text: 'End Tour',
           action: () => {
             tour.complete();
             setTourVisible(false);
@@ -179,7 +238,7 @@ export default function LandingPage() {
                     </div>
                   </h1>
                   <p className="max-w-[600px] text-gray-600 md:text-xl pt-3">
-                  StudyMate uses advanced AI to quickly summarize PDF articles, extract key keywords, answer questions, and generate educational flashcards. Enjoy interactive tours with Shepherd, guiding you through our features for an enhanced user experience.
+                    StudyMate uses advanced AI to quickly summarize PDF articles, extract key keywords, answer questions, and generate educational flashcards. Enjoy interactive tours with Shepherd, guiding you through our features for an enhanced user experience.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row pt-4">

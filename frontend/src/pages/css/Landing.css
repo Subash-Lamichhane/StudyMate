@@ -75,3 +75,13 @@
 .shepherd-element>.shepherd-content>.shepherd-footer>.shepherd-button:hover {
     animation: scaling 0.2s ease-in-out forwards;
 }
+.tour-cat-gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .tour-cat-gif {
+    width: 128px; /* Equivalent to w-32 */
+    height: 128px; /* Equivalent to h-32 */
+  }
